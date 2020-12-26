@@ -78,7 +78,6 @@ class Chain:
 		
 	@staticmethod
 	def verifying_proof(last_proof, proof):
-		#verifying the proof: does hash(last_proof, proof) contain 4 leading zeroes?
 		guess = f'{last_proof}{proof}'.encode()
 		guess_hash = hashlib.sha256(guess).hexdigest()
 		return guess_hash[:4] == "0000"
@@ -93,9 +92,9 @@ class Chain:
 		
 	def block_mining(self, details_miner):
 		self.new_data(
-			sender="0",  #it implies that this node has created a new block
+			sender="0",
 			recipient=details_miner,
-			quantity= 1,  #creating a new block (or identifying the proof number) is awarded with 1
+			quantity= 1,
 		)
 		last_block = self.latest_block
 		last_proof_no = last_block.proof_no
