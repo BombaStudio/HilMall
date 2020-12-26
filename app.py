@@ -10,10 +10,10 @@ while True:
 	last_proof_no = last_block.proof_no
 	proof_no = blockchain.proof_of_work(last_proof_no)
 	blockchain.new_data(
-    sender="0",  #it implies that this node has created a new block
-    recipient="Büyük Hilmi",  #let's send Quincy some coins!
+    sender="0",
+    recipient="Büyük Hilmi",
     quantity=
-    5,  #creating a new block (or identifying the proof number) is awarded with 1
+    5,  
 )
 
 	last_hash = last_block.calc 
